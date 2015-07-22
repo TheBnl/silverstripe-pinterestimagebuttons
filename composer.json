@@ -2,7 +2,7 @@
   "name": "bramdeleeuw/pinterestimagebuttons",
   "description": "Adds an extension to the image object that lets you place a pinterest share button to share a high resolution version of the image.",
   "type": "silverstripe-module",
-  "homepage": "https://github.com/TheBnl/silverstripe-webapp",
+  "homepage": "https://github.com/TheBnl/silverstripe-pinterestimagebuttons",
   "keywords": ["silverstripe", "pinterest", "share", "social", "image", "extension"],
   "license": "BSD-3-Clause",
   "authors": [
