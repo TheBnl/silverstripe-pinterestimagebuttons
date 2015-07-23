@@ -8,8 +8,12 @@
 
 class PinterestButton extends DataExtension {
 
+	/**
+	 * Retrieves the nececary data and returns it as rendered html
+	 *
+	 * @return HTMLText
+	 */
 	public function PlacePinterestButton() {
-
 		$baseURL = Director::absoluteBaseURL();
 		$currentURL = Director::absoluteBaseURL();
 		$filename = $this->owner->Filename;
