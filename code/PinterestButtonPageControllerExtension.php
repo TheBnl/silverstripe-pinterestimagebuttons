@@ -24,7 +24,6 @@ class PinterestButtonPageControllerExtension extends Extension {
 												"&description="+ escape(description);
 
 				PopupCenter(windowURL, "Pin It", 750, 550);
-				console.log('pinIt!',media,url,description);
 				return false;
 			}
 
@@ -45,7 +44,6 @@ class PinterestButtonPageControllerExtension extends Extension {
 
 			var pinButtons = document.getElementsByClassName("pinIt");
 			for (var i = 0; i < pinButtons.length; i++) {
-				console.log(pinButtons[i]);
 			 	pinButtons[i].onclick = pinterestShare;
 			}
 JS
