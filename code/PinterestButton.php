@@ -15,7 +15,7 @@ class PinterestButton extends DataExtension {
 	 */
 	public function PlacePinterestButton() {
 		$baseURL = Director::absoluteBaseURL();
-		$currentURL = Director::absoluteBaseURL();
+		$currentURL = Director::absoluteURL('');
 		$filename = $this->owner->Filename;
 		$completPath = $baseURL.$filename;
 		$imagTitle = $this->owner->Title;
