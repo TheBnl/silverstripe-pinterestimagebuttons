@@ -6,14 +6,15 @@
  * Time: 16:45
  */
 
-class PinterestButtonPageControllerExtension extends Extension {
+class PinterestButtonPageControllerExtension extends Extension
+{
 
-	/**
-	 * Add the required javascript line to pop up the pinterest share dialogue
-	 */
-	public function onBeforeInit()
-	{
-		Requirements::customScript(<<<JS
+    /**
+     * Add the required javascript line to pop up the pinterest share dialogue
+     */
+    public function onBeforeInit()
+    {
+        Requirements::customScript(<<<JS
 			var pinterestShare = function() {
 				var media = this.getAttribute("data-media");
 				var url = this.getAttribute("data-url");
@@ -47,6 +48,6 @@ class PinterestButtonPageControllerExtension extends Extension {
 			 	pinButtons[i].onclick = pinterestShare;
 			}
 JS
-		);
-	}
+        );
+    }
 }
