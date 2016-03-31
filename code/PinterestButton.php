@@ -1,33 +1,43 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: bramdeleeuw
- * Date: 22-07-15
- * Time: 16:08
+ * PinterestButton.php
+ *
+ * @author Bram de Leeuw
+ * Date: 31/03/16
  */
+ 
+ class PinterestButton {
 
-class PinterestButton extends DataExtension
-{
+	 /**
+	  * The Pinterest Domain Verify ID
+	  * @config
+	  */
+	 private static $pinterest_domain_verify_id = "SiteConfig";
 
-    /**
-     * Retrieves the nececary data and returns it as rendered html
-     *
-     * @return HTMLText
-     */
-    public function PlacePinterestButton()
-    {
-        $baseURL = Director::absoluteBaseURL();
-        $currentURL = Director::absoluteURL('');
-        $filename = $this->owner->Filename;
-        $completPath = $baseURL.$filename;
-        $imagTitle = $this->owner->Title;
-        
-        $sendData = new ArrayData(array(
-            "AbsoluteLink" => $completPath,
-            "Description" => $imagTitle,
-            "AbsoluteSiteLink" => $currentURL,
-        ));
+	 /**
+	  * Get the pinterest domain verify id
+	  * @return String
+	  */
+	 public static function get_pinterest_domain_verify_id() {
+		 
+		 echo "<pre>";
+		 print_r("test");
+		 echo "</pre>";
+		 exit();
+		 
+		 $domainVerifyID = Config::inst()->get("PinterestButton", "pinterest_domain_verify_id");
+		 if ($domainVerifyID === "SiteConfig") {
+			 $domainVerifyID = SiteConfig::current_site_config()->getField("PinterestDomainVerifyID");
+		 }
+		 return $domainVerifyID;
+	 }
 
-        return $sendData->renderWith('PinterestButton');
-    }
-}
+	 /**
+	  * Check whether or not to use the site config to set the ID
+	  * @return String
+	  */
+	 public static function use_site_config() {
+		 $domainVerifyID = Config::inst()->get("PinterestButton", "pinterest_domain_verify_id");
+		 return $domainVerifyID === "SiteConfig";
+	 }
+ }

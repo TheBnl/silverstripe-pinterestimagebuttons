@@ -1,0 +1,15 @@
+---
+Name: pinterestimagebuttons
+---
+Image:
+  extensions:
+    - PinterestButtonImageExtension
+SiteTree:
+  extensions:
+    - PinterestButtonSiteTreeExtension
+Page_Controller:
+  extensions:
+    - PinterestButtonPageControllerExtension
+SiteConfig:
+  extensions:
+    - PinterestButtonSiteConfigExtension

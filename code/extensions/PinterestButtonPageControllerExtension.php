@@ -1,16 +1,15 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: bramdeleeuw
+ * User: Bram de Leeuw
  * Date: 22-07-15
  * Time: 16:45
  */
 
 class PinterestButtonPageControllerExtension extends Extension
 {
-
     /**
      * Add the required javascript line to pop up the pinterest share dialogue
+     * TODO: Use default pinterest script
      */
     public function onBeforeInit()
     {

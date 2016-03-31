@@ -1,3 +1,4 @@
+<%-- TODO: use the default pin it button --%>
 <span class="pinIt"
 		data-media="$AbsoluteLink"
 		data-url="$AbsoluteSiteLink"
