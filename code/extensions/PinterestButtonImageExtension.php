@@ -15,18 +15,12 @@ class PinterestButtonImageExtension extends DataExtension
      */
     public function PlacePinterestButton()
     {
-        $baseURL = Director::absoluteBaseURL();
-        $currentURL = Director::absoluteURL('');
-        $filename = $this->owner->Filename;
-        $completePath = $baseURL.$filename;
-        $imageTitle = $this->owner->Title;
-        
-        $sendData = new ArrayData(array(
-            "AbsoluteLink" => $completePath,
-            "Description" => $imageTitle,
-            "AbsoluteSiteLink" => $currentURL,
+        $pinterestButtonData = new ArrayData(array(
+            "Media" => urlencode($this->owner->getAbsoluteURL()),
+            "Description" => urlencode($this->owner->Title),
+            "URL" => urlencode(Director::absoluteURL(''))
         ));
 
-        return $sendData->renderWith('PinterestButton');
+        return $pinterestButtonData->renderWith("PinterestButton");
     }
 }
