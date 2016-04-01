@@ -1,6 +1,10 @@
 ---
 Name: pinterestimagebuttons
 ---
+PinterestButton:
+  # Set this value in your config.yml to your domain verification ID
+  # Otherwise a field in the SiteConfig will be displayed where the admin can set the value
+  pinterest_domain_verify_id: 'SiteConfig'
 Image:
   extensions:
     - PinterestButtonImageExtension

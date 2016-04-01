@@ -7,7 +7,6 @@
 
 class PinterestButtonImageExtension extends DataExtension
 {
-
     /**
      * Retrieves the necessary data and returns it as rendered html
      *
@@ -16,9 +15,9 @@ class PinterestButtonImageExtension extends DataExtension
     public function PlacePinterestButton()
     {
         $pinterestButtonData = new ArrayData(array(
-            "Media" => urlencode($this->owner->getAbsoluteURL()),
+            "Media" => $this->owner->getAbsoluteURL(),
             "Description" => urlencode($this->owner->Title),
-            "URL" => urlencode(Director::absoluteURL(''))
+            "URL" => Director::absoluteURL('')
         ));
 
         return $pinterestButtonData->renderWith("PinterestButton");
