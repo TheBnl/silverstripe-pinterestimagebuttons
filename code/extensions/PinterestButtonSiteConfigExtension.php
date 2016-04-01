@@ -18,15 +18,12 @@ class PinterestButtonSiteConfigExtension extends DataExtension
 	 */
 	public function updateCMSFields(FieldList $fields)
 	{
-		echo "<pre>";
-		print_r(PinterestButton::use_site_config());
-		echo "</pre>";
-		exit();
-		if (PinterestButton::use_site_config())
+		if (PinterestButton::use_site_config()) {
 			$fields->addFieldToTab("Root.Pinterest",
 				TextField::create("PinterestDomainVerifyID", "PinterestDomainVerifyID")
 					->setDescription("Place your pinterest ID here"));
-		else
+		} else {
 			$fields->removeByName("PinterestDomainVerifyID");
+		}
 	}
 }

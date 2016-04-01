@@ -19,12 +19,6 @@
 	  * @return String
 	  */
 	 public static function get_pinterest_domain_verify_id() {
-		 
-		 echo "<pre>";
-		 print_r("test");
-		 echo "</pre>";
-		 exit();
-		 
 		 $domainVerifyID = Config::inst()->get("PinterestButton", "pinterest_domain_verify_id");
 		 if ($domainVerifyID === "SiteConfig") {
 			 $domainVerifyID = SiteConfig::current_site_config()->getField("PinterestDomainVerifyID");
@@ -38,6 +32,6 @@
 	  */
 	 public static function use_site_config() {
 		 $domainVerifyID = Config::inst()->get("PinterestButton", "pinterest_domain_verify_id");
-		 return $domainVerifyID === "SiteConfig";
+		 return $domainVerifyID === "SiteConfig" ? true : false;
 	 }
  }
