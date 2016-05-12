@@ -15,6 +15,6 @@ class PinterestButtonSiteTreeExtension extends DataExtension
 	public function MetaTags(&$tags)
 	{
 		$pinterestDomainVerifyID = PinterestButton::get_pinterest_domain_verify_id();
-		if ($pinterestDomainVerifyID != null) $tags .= sprintf("<meta name=“p:domain_verify” content=“%s”/>", $pinterestDomainVerifyID);
+		if ($pinterestDomainVerifyID != null) $tags .= sprintf("<meta name='p:domain_verify' content='%s'>", $pinterestDomainVerifyID);
 	}
 }
